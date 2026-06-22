@@ -94,19 +94,23 @@ def _convert_xray_source_params(value: str):
 
 def _convert_xray_source_settings(value: str):
     """Map all items in xray_source_settings to a dictionary."""
-    (xray_settings) = re.split(r"(\d+)", value)
 
-    # TODO: This should be done through the _context
-    # # for i, setting in enumerate(xray_settings):
-    #     xray_settings[i] = convert_units(setting)
+    def _normalize_xray_unit(unit: str) -> str:
+        """Normalize vendor-specific units while preserving the physical unit."""
+        base_unit = unit.split("_", 1)[0]
+        if base_unit.upper() == "KV":
+            return "kV"
+        return unit
+
+    xray_settings = re.split(r"(\d+)", value)
 
     return {
         "spot_size": float(xray_settings[1]),
-        "spot_size_units": xray_settings[2],
+        "spot_size_units": _normalize_xray_unit(xray_settings[2]),
         "power": float(xray_settings[3]),
-        "power_units": xray_settings[4],
+        "power_units": _normalize_xray_unit(xray_settings[4]),
         "high_voltage": float(xray_settings[5]),
-        "high_voltage_units": xray_settings[6],
+        "high_voltage_units": _normalize_xray_unit(xray_settings[6]),
     }
 
 

@@ -1,0 +1,140 @@
+title: Fe3O4 sterile test metadata
+method: X-ray Photoelectron Spectroscopy (XPS)
+start_time: 2022-11-22T09:15:00.000Z
+experiment_institution: Test Laboratory
+experiment_facility: Test Facility
+experiment_laboratory: XPS Testing Lab
+user:
+  name: Test User
+  affiliation: Test University
+  email: test.user@example.org
+instrument:
+  energy_resolution:
+    type: calibrated
+    resolution:
+      value: 0.1
+      unit: eV
+  source_probe:
+    type: Fixed Tube X-ray
+    name: Al K alpha source
+    probe: photon
+    device_information:
+      vendor: ULVAC-PHI
+      model: Quantes
+      identifier: test-v1
+  beam_probe:
+    distance:
+      value: 0.0
+      unit: mm
+  electronanalyzer:
+    name: Hemispherical analyzer
+    description: hemispherical
+    device_information:
+      vendor: ULVAC-PHI
+      model: Quantes analyzer
+      identifier: null
+    collectioncolumn:
+      scheme: angular dispersive
+      device_information:
+        vendor: ULVAC-PHI
+        model: Quantes
+        identifier: null
+    energydispersion:
+      scheme: hemispherical
+      radius:
+        unit: mm
+        value: 150
+      device_information:
+        vendor: ULVAC-PHI
+        model: Quantes analyzer
+        identifier: null
+    detector:
+      amplifier_type: channeltron
+      detector_type: Multi-anode
+  manipulator:
+    device_information:
+      vendor: ULVAC-PHI
+      model: 5-axis manipulator
+      identifier: null
+    temperature_sensor:
+      name: type K thermocouple
+      measurement: temperature
+      attached_to: sample
+      type: type K thermocouple
+      value:
+        value: 298.0
+        unit: K
+    sample_heater:
+      name: Sample heater
+      actuation_target: temperature
+      type: IR diode laser
+      output_heater_power:
+        value: 0.0
+        unit: W
+      pid_controller:
+        setpoint:
+          value: 298.0
+          unit: K
+    cryostat:
+      name: null
+      actuation_target: null
+      type: null
+      pid_controller:
+        setpoint: null
+    drain_current_ammeter:
+      name: ammeter 1.0
+      measurement: current
+      type: wire
+      value:
+        value: 0.1
+        unit: nA
+    sample_bias_voltmeter:
+      name: XPS sample voltmeter
+      measurement: voltage
+      attached_to: sample
+      type: oscilloscope
+      value:
+        value: 0.0
+        unit: V
+    sample_bias_potentiostat:
+      name: XPS sample potentiostat
+      actuation_target: voltage
+      type: potentiostat
+      pid_controller:
+        setpoint:
+          value: 0.0
+          unit: V
+  pressure_gauge:
+    name: ionization gauge
+    measurement: pressure
+    type: hot-filament ionization gauge
+    value:
+      value: 1.0e-09
+      unit: mbar
+  flood_gun:
+    name: low energy electron source
+    actuation_target: current
+    type: low energy electron source
+    current:
+      value: 0.0
+      unit: A
+sample:
+  name: Fe3O4 sterile test sample
+  identifierNAME[identifier]: P037.146.34.Fe3O4
+  chemical_formula: Fe3O4
+  physical_form: drop-cast film
+  situation: vacuum
+  substance:
+    name: Fe3O4
+    molecular_formula_hill: Fe3O4
+  history:
+    sample_preparation:
+      start_time: 2022-11-22T08:45:00.000Z
+      end_time: 2022-11-22T09:00:00.000Z
+      description: drop cast from solution onto Si wafer for testing
+      method: drop casting
+    ACTIVITY[sample_loading]:
+      start_time: 2022-11-22T09:05:00.000Z
+      end_time: 2022-11-22T09:10:00.000Z
+      description: mounted on platen and transferred to analysis chamber
+      method: vacuum transfer
